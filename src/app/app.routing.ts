@@ -5,16 +5,16 @@ const routes: Routes = [
   {
     path: '',
     component: ContentLayoutComponent,
-    // children: [
-    //   {
-    //     path: '',
-    //     loadChildren: () =>
-    //       import('../app/modules/home-page/home-page.module').then(
-    //         (m) => m.HomePageModule
-    //       )
-    //   },
-    // ]
-  }
+    children: [
+      {
+        path: '',
+        loadChildren: () =>
+          import('../app/modules/guest/guest.module').then(
+            (m) => m.GuestModule
+          )
+      },
+    ]
+  },
 ]
 
 export const AppRoutes = RouterModule.forRoot(routes, {
