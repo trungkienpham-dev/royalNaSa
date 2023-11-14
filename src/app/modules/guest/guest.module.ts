@@ -3,9 +3,6 @@ import { GuestRoutes } from './guest.routing';
 
 @NgModule({
   imports: [GuestRoutes],
-  declarations: [
-
-  ],
-
+  declarations: [],
 })
 export class GuestModule {}

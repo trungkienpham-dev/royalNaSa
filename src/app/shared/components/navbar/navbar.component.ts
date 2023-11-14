@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MENUITEMS } from 'src/app/layout/sidebar-menu';
+import { Router } from '@angular/router';
+import { MENUITEMS } from 'src/app/layouts/sidebar-menu';
 
 @Component({
   selector: 'app-navbar',
@@ -7,12 +8,13 @@ import { MENUITEMS } from 'src/app/layout/sidebar-menu';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
+  constructor(
+    private router: Router
+  ){}
   menuItems = MENUITEMS
-  ngOnInit(): void {
-
+  ngOnInit(): void {}
+  onClickItem(item: any) {
+    this.router.navigate([`${item.path}`])
   }
-  onClickMenu(item: any) {
-    console.log('item', item);
 
-  }
 }

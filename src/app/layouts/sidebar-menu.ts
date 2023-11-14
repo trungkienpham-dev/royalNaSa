@@ -1,53 +1,57 @@
 export interface MenuItem {
+  id: string;
   name: string;
   path: string;
-  children: MenuItem[];
+  children: any[];
 }
 
 export const MENUITEMS: MenuItem[] = [
   {
+    id: '1',
     name: 'Trang chủ',
     path: '/',
     children: []
   },
   {
+    id: '2',
     name: 'Giới thiệu',
     path: '/introduce',
     children: []
   },
   {
+    id: '3',
     name: 'Danh mục sản phẩm',
-    path: '/introduce/open-letter-detail',
+    path: '/category',
     children: [
       {
         name: 'sắt mỹ thuật',
-        path: '/smt',
+        path: '/sat-my-thuat',
         children: [
           {
             name: 'cổng',
-            path: '',
+            path: 'gate',
             children: []
           },
           {
             name: 'mái',
-            path: '',
+            path: 'roof',
             children: []
           },
           {
             name: 'lan can',
-            path: '',
+            path: 'balcony',
             children: []
           },
           {
             name: 'cầu thang',
-            path: '',
+            path: 'stair',
             children: []
           }
         ]
       },
       {
         name: 'nhôm kính',
-        path: '/nk',
+        path: '/nhom-kinh',
         children: [
           {
             name: 'thuỷ lực',
@@ -69,6 +73,7 @@ export const MENUITEMS: MenuItem[] = [
     ]
   },
   {
+    id: '4',
     name: 'Liên hệ',
     path: '',
     children: []
