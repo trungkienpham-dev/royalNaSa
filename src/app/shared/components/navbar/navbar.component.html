@@ -1,0 +1,11 @@
+<ul class="text-center" nz-menu nzMode="horizontal">
+  <li class="uppercase" (click)="onClickItem(item)" *ngFor="let item of menuItems" nz-submenu nzPlacement="bottomLeft" nzTitle={{item.name}}>
+    <ul *ngIf="item.children.length > 0">
+      <li class="uppercase" *ngFor="let child of item.children" nz-submenu nzTitle={{child.name}}>
+        <ul *ngIf="child.children.length > 0">
+          <li class="uppercase" (click)="onSelectGrandChild(grandChild)" nz-menu-item *ngFor="let grandChild of child.children">{{grandChild.name}}</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
