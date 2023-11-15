@@ -15,13 +15,13 @@ export const MENUITEMS: MenuItem[] = [
   {
     id: '2',
     name: 'Giới thiệu',
-    path: '/introduce',
+    path: 'introduce',
     children: []
   },
   {
     id: '3',
     name: 'Danh mục sản phẩm',
-    path: '/category',
+    path: 'category',
     children: [
       {
         name: 'sắt mỹ thuật',

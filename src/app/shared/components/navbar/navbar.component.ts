@@ -16,5 +16,8 @@ export class NavbarComponent implements OnInit {
   onClickItem(item: any) {
     this.router.navigate([`${item.path}`])
   }
+  onSelectGrandChild(item: any) {
+    this.router.navigate([`category/${item.path}`])
+  }
 
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HomeService } from '../../services/home.service';
+import { GateService } from '../../services/gate.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-gate-lst',
@@ -8,7 +9,8 @@ import { HomeService } from '../../services/home.service';
 })
 export class GateLstComponent implements OnInit {
   constructor(
-    private homeService: HomeService
+    private router: Router,
+    private gateService: GateService
   ){}
   listcard: any[] = [];
 
@@ -16,13 +18,15 @@ export class GateLstComponent implements OnInit {
     this.getList()
   }
   getList() {
-    this.homeService
+    this.gateService
       .getCardList()
       .pipe()
       .subscribe((item: any) => {
         this.listcard = item
-        console.log('list', this.listcard);
-
       })
+  }
+  onDetail(item: string){
+    console.log(item);
+    this.router.navigate([`category/gate/${item}`])
   }
 }

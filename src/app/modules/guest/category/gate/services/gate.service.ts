@@ -7,7 +7,7 @@ import { CardProduct } from '../models/card-combo';
 @Injectable({
   providedIn: 'root'
 })
-export class HomeService {
+export class GateService {
 
   getCardList(): Observable<CardProduct[]> {
     return of(satMyThuat)

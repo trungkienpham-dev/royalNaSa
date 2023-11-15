@@ -1,0 +1,16 @@
+<div class="grid grid-cols-2 py-3 px-6">
+  <div class="col-span-1">
+    <img
+    class="pb-5"
+      nz-image
+      nzSrc="https://i.pinimg.com/474x/cb/be/d3/cbbed32d49ce51d9849d8dd6e69f717f.jpg"
+      alt=""
+    />
+    <nz-carousel [nzEffect]="'fade'">
+      <div nz-carousel-content *ngFor="let index of array">
+        <h3>{{ index }}</h3>
+      </div>
+    </nz-carousel>
+  </div>
+  <div class="col-span-1">Thông tin</div>
+</div>

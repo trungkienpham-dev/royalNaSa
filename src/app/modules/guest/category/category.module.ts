@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { GateLstComponent } from './gate/pages/gate-lst/gate-lst.component';
 import { CategoryRoutes } from './category.routing';
-import { CardProductComponent } from './gate/pages/card-product/card-product.component';
-import { HomeService } from './gate/services/home.service';
+import { GateService } from './gate/services/gate.service';
+import { GateDetailComponent } from './gate/pages/gate-detail/gate-detail.component';
 
 @NgModule({
   imports: [
@@ -14,8 +14,8 @@ import { HomeService } from './gate/services/home.service';
   ],
   declarations: [
     GateLstComponent,
-    CardProductComponent
+    GateDetailComponent
   ],
-  providers: [HomeService]
+  providers: [GateService]
 })
 export class CategoryModule { }
