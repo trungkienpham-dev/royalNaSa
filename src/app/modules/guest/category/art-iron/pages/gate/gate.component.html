@@ -1,0 +1,82 @@
+<div class="grid grid-cols-12">
+  <div class="col-span-2"></div>
+  <div class="col-span-8">
+    <div class="grid grid-cols-12 my-10">
+      <div class="col-span-6">
+        <div class="image">
+          <img style="border: 15px #fff solid;" src="https://i.pinimg.com/474x/56/b5/d5/56b5d5732b5e2cbe8ebd04a0e793383f.jpg" alt="">
+        </div>
+        <div class="slide my-3">
+          <carousel
+            [images]="images"
+            [cellsToShow]="3"
+            [loop]="true"
+            [autoplay]="true"
+            [autoplayInterval]="3000"
+            >
+          </carousel>
+        </div>
+      </div>
+      <div class="col-span-4">
+        <div class="name mx-3 text-3xl">Cổng sắt mỹ thuật</div>
+        <div class="underline mx-3 my-3" style="border-top:3px solid #F08E33; width: 25%;margin-bottom: 30px;"></div>
+        <div class="mx-3 text-l font-light">
+          Cổng sắt mỹ thuật với thiết kế độc đáo, sang trọng và lộng lẫy hiện đang rất được ưa thích.
+          Cổng sắt nghệ thuật thích hợp với những gia chủ yêu thích phong cách cổ điển, tân cổ điển và cả hiện đại.
+          Với tính thẩm mỹ, độ an toàn và độ bền cao, cổng sắt nghệ thuật chắc chắn sẽ là lựa chọn tuyệt vời cho mái ấm của bạn.
+          Dưới đây thông tin và TOP những mẫu cửa cổng sắt mỹ nghệ đẹp và cao cấp của chúng tôi cung cấp.
+        </div>
+      </div>
+      <div class="col-span-2">
+        <div class="categoryProduct">
+          <h3 class="uppercase text-l">Danh mục sản phẩm</h3>
+          <ul nz-menu nzMode="inline" style="list-style-type: none; margin: 0;">
+            <li class="uppercase" nzOpen="true" *ngFor="let item of productLst" nz-submenu [nzTitle]="item.name" nzIcon="appstore">
+              <ul class="ulchild" *ngIf="item.children">
+                <li class="child uppercase" [nzSelected]="child.path === 'gate' ? true : false " (click)="selectChild(item, child)" *ngFor="let child of item.children" nz-menu-item>{{child.name}}</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="desc">
+      <div class="title uppercase text-xl font-bold">mô tả</div>
+      <div class="underline" style="border-top:3px solid #F08E33; width: 2%;margin-bottom: 10px;"></div>
+      <div class="text-bold">1. Tại sao gọi là cửa cổng mỹ nghệ?</div>
+      <ul>
+        <li>Cửa cổng sắt nghệ thuật sử dụng loại sắt đặc chứ không phải là sắt hộp rỗng ruột thông thường. Nhờ bàn tay khéo léo tài tình và đầy nghệ thuật của các nghệ nhân, từng đường nét, từng chi tiết của sản phẩm được thổi hồn trở nên sống động, tinh tế và ấn tượng, tạo nên tổng thể sản phẩm hài hòa, nổi bậc, sang trọng và ấn tượng, mang phong cách kiến trúc Tây phương.</li>
+        <li>Trước đây, cửa cổng sắt mỹ thuật được coi là lựa chọn lý tưởng cho các công trình biệt thự và lâu đài cổ điển. Nhưng theo thời gian dài phát triển, mẫu cổng sắt mang những hoa văn mỹ nghệ này đã dần được sử dụng trong các kiến trúc khác nhau, từ truyền thống cho đến tân cổ điển và hiện đại. Dù với phong cách nào, cửa sắt mỹ thuật vẫn mang trong mình vẻ đẹp trường tồn, trang nhã và độc đáo.</li>
+        <li>Thiết kế của mẫu cổng mỹ thuật ngoài đẹp mắt còn đáp ứng được đồng thời 2 yếu tố là sự kiên cố chắc chắn và sự phù hợp. Bên cạnh đó, nhiều gia chủ cũng đề cao yếu tố phong thuỷ nhằm mong muốn đem lại may mắn và tài lộc cho bản thân và gia đình.</li>
+      </ul>
+      <div class="text-bold">2. Điểm khác biệt so với các mẫu cổng sắt thông thường.</div>
+      <ul>
+        <li>Chất liệu sắt mỹ nghệ sử dụng để làm cổng là loại sắt đặc và không rỗng ruột như sắt thi công cổng thông thường. Do đó, cửa sẽ có trọng lượng lớn hơn, vững chắc và khả năng chịu lực cao hơn.</li>
+        <li>Kiểu dáng và hoa văn của cổng sắt mỹ thuật vô cùng đa dạng. Cùng với sự ra đời của các loại máy cắt CNC hiện đại tạo ra nhiều mẫu cửa cổng cắt CNC mới lạ, bắt mắt, đáp ứng được tất cả các nhu cầu khác nhau của quý khách hàng.</li>
+        <li>Cổng từ sắt mỹ nghệ sẽ giúp quý gia chủ khẳng định được cá tính và gu thẩm mỹ riêng biệt của cá nhân.</li>
+        <li>Sự nổi bật của thiết kế cửa cổng mỹ thuật cũng góp phần không nhỏ vào việc tạo điểm nhấn cho toàn bộ công trình. Cửa cổng phù hợp với hầu hết các phong cách kiến trúc khác nhau, làm không gian sống trở nên độc đáo, sang trọng hơn rất nhiều.</li>
+      </ul>
+      <div class="text-bold">3. Ứng dụng vào các công trình nào?</div>
+      <ul>
+        <li>Cổng sắt cho Khu biệt thự, dinh thự, nhà phố, nhà ống, chung cư, … </li>
+        <li>Cổng sắt cho Công trình công cộng điển hình như bệnh viện, trường học, nhà văn hóa, … </li>
+        <li>Cổng sắt cho Công trình kinh doanh: nhà hàng, khách sạn, gara, showroom, …</li>
+      </ul>
+      <div class="text-bold">4. Phân loại cổng sắt an toàn</div>
+      <ul>
+        <li>Cổng sắt đơn giản: sẽ được gia công từ sắt vuông đặt và khung sắt hộp. Những mẫu này thường sẽ có kết cấu và thiết kế khá đơn giản, họa tiết trang trí cầu kỳ đa phần sẽ không có hoặc tương đối ít.</li>
+        <li>Cổng sắt mỹ nghệ: gia công từ sắt vuông đặt, khung sắt hộp, trang trí bằng các đường hoa văn uốn lượn. Những mẫu cổng này thường sẽ được thiết kế và gia công khá cầu kì và tỉ mỉ tạo nên những đường nét uốn lượn một cách tinh tế và nổi bật.</li>
+      </ul>
+      <div class="text-bold">5. Ưu, nhược điểm của cổng sắt mỹ thuật</div>
+      <ul>
+        <li>Độ bền cao</li>
+        <li>Chi phí sử dụng thấp</li>
+        <li>Đa dạng mẫu mã</li>
+        <li>Tính thẩm mỹ cao</li>
+        <li>Tính an toàn</li>
+        <li>Tính phong thuỷ</li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-span-2"></div>
+</div>

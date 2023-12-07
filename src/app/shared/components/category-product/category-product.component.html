@@ -1,10 +1,11 @@
 <div class="categoryProduct">
   <h3 class="uppercase text-xl">Danh mục sản phẩm</h3>
   <ul nz-menu nzMode="inline">
-    <li class="uppercase" nzOpen="true" *ngFor="let item of productLst" nz-submenu nzTitle={{item.name}} nzIcon="appstore">
-      <ul *ngIf="item.children">
-        <li class="uppercase" (click)="selectChild(child)" *ngFor="let child of item.children" nz-menu-item>{{child.name}}</li>
-      </ul>
+    <li class="uppercase" (click)="selectItem(item)" nzOpen="true" *ngFor="let item of productLst" nz-menu-item nzIcon="appstore">
+      {{item.name}}
+      <!-- <ul *ngIf="item.children">
+        <li class="uppercase" (click)="selectChild(item, child)" *ngFor="let child of item.children" nz-menu-item>{{child.name}}</li>
+      </ul> -->
     </li>
   </ul>
 </div>

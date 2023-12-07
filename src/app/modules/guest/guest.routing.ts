@@ -9,9 +9,18 @@ const routes: Routes = [
   },
   {
     path: 'category',
-    component: CategoryPageLayoutComponent,
     loadChildren: () =>
       import('./category/category.module').then((m) => m.CategoryModule)
+  },
+  {
+    path: 'introduce',
+    loadChildren: () =>
+      import('./introduce/introduce.module').then((m) => m.IntroduceModule)
+  },
+  {
+    path: 'contact',
+    loadChildren: () =>
+      import('./contact/contact.module').then((m) => m.ContactModule)
   }
 ]
 

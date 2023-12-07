@@ -1,0 +1,10 @@
+ <div class="grid grid-cols-3">
+  <div class="card-list col-span-1" *ngFor="let item of lstSMT" (click)="onDetail(item.path)">
+    <nz-card nzHoverable style="width:240px" [nzCover]="coverTemplate">
+      <nz-card-meta [nzTitle]="item.title"></nz-card-meta>
+    </nz-card>
+    <ng-template #coverTemplate>
+      <img style="width: 100%; height: 200px;" alt="example" [src]="item.image" />
+    </ng-template>
+  </div>
+</div>

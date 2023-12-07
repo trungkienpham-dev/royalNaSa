@@ -5,12 +5,18 @@ import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ZorroAntdModule } from '../zorro-antd.module';
 import { CategoryProductComponent } from './category-product/category-product.component';
+import { BannerComponent } from './banner/banner.component';
+import { CarouselComponent } from './carousel/carousel.component';
+import { TableComponent } from './table/table.component';
 
 const components = [
   HeaderComponent,
   FooterComponent,
   NavbarComponent,
-  CategoryProductComponent
+  CategoryProductComponent,
+  BannerComponent,
+  CarouselComponent,
+  TableComponent
 ];
 
 @NgModule({

@@ -5,6 +5,12 @@ import { NzMenuModule } from "ng-zorro-antd/menu";
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzImageModule } from 'ng-zorro-antd/image';
 import { NzCarouselModule } from 'ng-zorro-antd/carousel';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { IvyCarouselModule } from "angular-responsive-carousel";
+import { NzDescriptionsModule } from 'ng-zorro-antd/descriptions';
+import { NzTableModule } from 'ng-zorro-antd/table';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzButtonModule } from 'ng-zorro-antd/button';
 
 @NgModule({
   exports: [
@@ -13,7 +19,13 @@ import { NzCarouselModule } from 'ng-zorro-antd/carousel';
     NzMenuModule,
     NzCardModule,
     NzImageModule,
-    NzCarouselModule
+    NzCarouselModule,
+    NzIconModule,
+    IvyCarouselModule,
+    NzDescriptionsModule,
+    NzTableModule,
+    NzSelectModule,
+    NzButtonModule
   ]
 })
 export class ZorroAntdModule {}
