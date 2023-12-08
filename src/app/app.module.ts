@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CategoryPageLayoutComponent } from './layouts/category-page-layout/category-page-layout.component';
+import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 
 registerLocaleData(en);
 
@@ -20,7 +21,8 @@ registerLocaleData(en);
   declarations: [
     AppComponent,
     ContentLayoutComponent,
-    CategoryPageLayoutComponent
+    CategoryPageLayoutComponent,
+    AdminLayoutComponent
   ],
   imports: [
     AppRoutes,

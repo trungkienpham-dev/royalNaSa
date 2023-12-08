@@ -1,0 +1,61 @@
+<div class="grid grid-cols-12">
+  <div class="col-span-2"></div>
+  <div class="col-span-8">
+    <div class="grid grid-cols-12 my-10">
+      <div class="col-span-6">
+        <div class="image">
+          <img style="border: 15px #fff solid;" src="https://i.pinimg.com/474x/8f/b9/da/8fb9dae049c6ddd2a7039b57fe1b645e.jpg" alt="">
+        </div>
+        <div class="slide my-3">
+          <carousel
+            [images]="images"
+            [cellsToShow]="3"
+            [loop]="true"
+            [autoplay]="true"
+            [autoplayInterval]="3000"
+            >
+          </carousel>
+        </div>
+      </div>
+      <div class="col-span-4">
+        <div class="name mx-3 text-3xl">Cầu thang sắt mỹ thuật</div>
+        <div class="underline mx-3 my-3" style="border-top:3px solid #F08E33; width: 25%;margin-bottom: 30px;"></div>
+        <div class="mx-3 text-l font-light">
+          Mái che sắt mỹ thuật đẹp độc đáo sẽ làm tăng sự ấn tượng và thẩm mỹ cho nhiều công trình trang trí như nhà ở, biệt thự, khách sạn, …
+        </div>
+      </div>
+      <div class="col-span-2">
+        <div class="categoryProduct">
+          <h3 class="uppercase text-l">Danh mục sản phẩm</h3>
+          <ul nz-menu nzMode="inline" style="list-style-type: none; margin: 0;">
+            <li class="uppercase" nzOpen="true" *ngFor="let item of productLst" nz-submenu [nzTitle]="item.name" nzIcon="appstore">
+              <ul class="ulchild" *ngIf="item.children">
+                <li class="child uppercase" [nzSelected]="child.path === 'stair' ? true : false " (click)="selectChild(item, child)" *ngFor="let child of item.children" nz-menu-item>{{child.name}}</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="desc">
+      <div class="title uppercase text-xl font-bold">mô tả</div>
+      <div class="underline" style="border-top:3px solid #F08E33; width: 2%;margin-bottom: 10px;"></div>
+      <div class="text-bold">1. Cầu thang sắt mỹ thuật là gì?</div>
+      <ul>
+        <li>Cầu thang sắt mỹ thuật là một sản phẩm được làm từ sắt nhưng khác với những loại cầu thang bình thường bởi lan can mỹ thuật được tạo ra bởi những thợ gia công có kinh nghiệm, trình độ và chuyên môn cao. Lan can cầu thang sắt nghệ thuật được đặt trên lối đi của cầu thang, làm điểm tựa cho cánh tay tạo nên sự an toàn tuyệt đối cho quý gia chủ khi di chuyển qua cầu thang.</li>
+        <li>Cầu thang bảo vệ mĩ thuật đặc trưng với các đường nét uốn lượn mềm mại quyến rũ đến mê người, uyển chuyển nhẹ nhàng nhưng vẫn đảm bảo đủ sự trang trọng và an toàn </li>
+        <li>Cầu thang mỹ thuật đã xuất hiện từ rất lâu trong nhiều công trình cung điện, biệt thự ở một số nước Châu Âu. Và sau khoảng gần chục năm trở lại đây, cầu thang sắt </li>
+      </ul>
+      <div class="text-bold">2. Ưu điểm của cầu thang lan can sắt mỹ thuật</div>
+      <ul>
+        <li>Tính thẩm mỹ ấn tượng: Lan can sắt nghệ thuật được xem là một trong những kiểu cầu thang có tính thẩm mỹ cao nhất ở thời điểm hiện nay. Quý khách hàng có thể bị cuốn hút hoàn toàn bởi đường cong mềm mại được tạo nên từ đôi bàn tay khéo léo của những người thợ giỏi. Mỗi mẫu cầu thang hoa văn mỹ nghệ được ví như một tác phẩm nghệ thuật điêu khắc, giúp hồ biến căn phòng của bạn trở nên đẹp, sang trọng và ấn tượng hơn.</li>
+        <li>Thời gian lắp đặt, thi công cầu nhanh chóng: Sau khi cầu thang sắt đã hoàn thiện việc thi công, quá trình lắp ráp sẽ trở nên nhanh chóng và đơn giản. Công đoạn này sẽ được thực hiện đồng thời với các quy trình khác của quá trình hoàn thiện nhà ở vì vậy sẽ không làm ảnh hưởng đến tiến độ tổng thể của công trình xây dựng.</li>
+        <li>Tính bền bỉ cao: Sắt là một trong những chất liệu cứng cáp, chắc chắn và có độ bền cao. Vì vậy, cầu thang nghệ thuật từ sắt sẽ có thể trường tồn với thời gian nếu được quý khách giữ gìn và bảo quản đúng cách. Đồng thời, trụ cầu thang sắt nghệ thuật cùng lớp sơn bảo vệ bề mặt sắt giúp ngăn chặn quá trình oxy hóa và ăn mòn sắt.</li>
+        <li>Đa dạng và phong phú về mẫu mã: Vật liệu chính làm nên lan can mỹ nghệ là sắt, dễ gia công uốn nắn. Do đó, trên thị trường hiện nay cầu thang mỹ thuật có rất nhiều kiểu dáng và mẫu mã khác nhau. Quý khách có thể thỏa thích lựa chọn dựa theo sở thích, phong cách nội thất và tài chính của bản thân mình.</li>
+        <li>Giá thành hợp lý với nhiều đối tượng: Cầu thang sắt có giá thành tương đối rẻ hơn so với các loại chất liệu làm lan can khác, đồng thời gian lắp đặt nhanh nên chi phí nhân lực cũng vì thế mà giảm xuống. Có thể nói mức giá này rất hợp lý và đúng với giá trị mà cầu thang nghệ thuật mang lại cho ngôi nhà thân yêu của quý khách hàng.</li>
+        <li>Tính an toàn cao cho gia đình: Bạn hoàn toàn yên tâm khi lắp cầu thang sắt này khi gia đình có trẻ nhỏ. Những chân tiện sắt được bắt vít thẳng vào mặt bậc nên vô cùng vững chắc. Đồng thời, khoảng cách giữa các chân tiện là vô cùng nhỏ hẹp vì vậy quý khách không phải lo ngại con em mình chui qua được khe hở giữa 2 chân tiện. Tay vịn cầu thang sắt mỹ thuật chắc chắn và sẽ không bị rung lắc khi bám vào.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-span-2"></div>
+</div>

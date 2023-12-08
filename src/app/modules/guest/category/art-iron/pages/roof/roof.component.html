@@ -1,0 +1,80 @@
+<div class="grid grid-cols-12">
+  <div class="col-span-2"></div>
+  <div class="col-span-8">
+    <div class="grid grid-cols-12 my-10">
+      <div class="col-span-6">
+        <div class="image">
+          <img style="border: 15px #fff solid;" src="https://i.pinimg.com/474x/be/b2/ed/beb2ed1db1d4ae392127c9f9f961519a.jpg" alt="">
+        </div>
+        <div class="slide my-3">
+          <carousel
+            [images]="images"
+            [cellsToShow]="3"
+            [loop]="true"
+            [autoplay]="true"
+            [autoplayInterval]="3000"
+            >
+          </carousel>
+        </div>
+      </div>
+      <div class="col-span-4">
+        <div class="name mx-3 text-3xl">Mái sắt mỹ thuật</div>
+        <div class="underline mx-3 my-3" style="border-top:3px solid #F08E33; width: 25%;margin-bottom: 30px;"></div>
+        <div class="mx-3 text-l font-light">
+          Mái che sắt mỹ thuật đẹp độc đáo sẽ làm tăng sự ấn tượng và thẩm mỹ cho nhiều công trình trang trí như nhà ở, biệt thự, khách sạn, …
+        </div>
+      </div>
+      <div class="col-span-2">
+        <div class="categoryProduct">
+          <h3 class="uppercase text-l">Danh mục sản phẩm</h3>
+          <ul nz-menu nzMode="inline" style="list-style-type: none; margin: 0;">
+            <li class="uppercase" nzOpen="true" *ngFor="let item of productLst" nz-submenu [nzTitle]="item.name" nzIcon="appstore">
+              <ul class="ulchild" *ngIf="item.children">
+                <li class="child uppercase" [nzSelected]="child.path === 'roof' ? true : false " (click)="selectChild(item, child)" *ngFor="let child of item.children" nz-menu-item>{{child.name}}</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="desc">
+      <div class="title uppercase text-xl font-bold">mô tả</div>
+      <div class="underline" style="border-top:3px solid #F08E33; width: 2%;margin-bottom: 10px;"></div>
+      <div class="text-bold">1. Mái che, mái kính sắt nghệ thuật là gì?</div>
+      <ul>
+        <li>Mái che sắt mỹ thuật là sự kết hợp hoàn hảo giữa sắt mỹ thuật và kính cường lực, không chỉ đảm nhận chức năng bảo vệ ngôi nhà khỏi nắng mưa, mà còn tăng thêm vẻ đẹp cho kiến trúc. Trước kia, người ta thường sử dụng sắt hộp thông thường để chế tạo mái che. Tuy nhiên, sự xuất hiện của sắt mỹ thuật đã mang đến những thiết kế mái hiên và mái vòm vô cùng tinh xảo và cuốn hút.</li>
+      </ul>
+      <div class="text-bold">2. Mái hiên sắt nghệ thuật có kết cấu gồm hai bộ phận chính: phần khung đỡ và phần kính.</div>
+      <ul>
+        <li>Phần khung đỡ mái hiên sắt nghệ thuật: Phần khung đỡ mái kính sắt mỹ thuật là khung sắt uốn nghệ thuật, trang trí bằng hoa văn và họa tiết độc đáo. Vì sắt mỹ nghệ có độ bền và sự chắc chắn cao, nên thường được chọn làm khung cho mái sảnh, mái hiên trong các công trình cao cấp như khách sạn, trung tâm thương mại, biệt thự, nhà ở, …</li>
+        <li>Phần kính của mái hiên sắt nghệ thuật</li>
+      </ul>
+      <div class="text-bold">3. Việc sử dụng loại kính nào phụ thuộc vào hệ kết cấu khung mái, thông dụng nhất là:</div>
+      <ul>
+        <li>Kính cường lực: được xử lý nhiệt và làm nguội nhanh bằng khí nén để tạo ra sức căng bề mặt, có khả năng chịu lực, va đập và trọng tải lớn. Khi vỡ, loại kính này sẽ biến thành những mảnh vụn nhỏ như hạt ngô, không gây thương tích.</li>
+        <li>Kính dán an toàn: được dán từ hai hay nhiều lớp kính, với các lớp kính được kết nối bởi màng PVB.</li>
+      </ul>
+      <div class="text-bold">4. Ưu điểm của mái che sắt nghệ thuật</div>
+      <ul>
+        <li>Tăng tính thẩm mỹ, sự đẳng cấp cho không gian sống và thể hiện phong cách sáng tạo của gia chủ.</li>
+        <li>Khả năng lấy ánh sáng tự nhiên tốt và ngăn chặn ánh sáng có hại.</li>
+        <li>Mang xu hướng hiện đại, là lựa chọn tốt cho trang trí ngoại thất của đa dạng công trình.</li>
+        <li>Độ bền cao, không cần bảo dưỡng thường xuyên, tiết kiệm chi phí sửa chữa và thay thế.</li>
+        <li>Thi công lắp đặt mái che sắt mỹ nghệ vô cùng nhanh chóng và tiện lợi.</li>
+      </ul>
+      <div class="text-bold">5. Hạn chế của mái che sắt nghệ thuật</div>
+      <ul>
+        <li>Dễ bị rỉ sét do thời tiết, cần sơn lớp tĩnh điện chống gỉ cho sản phẩm mái che.</li>
+        <li>Giá thành của mái vòm sắt mỹ nghệ cao hơn so với mái kính thông thường.</li>
+        <li>Yêu cầu cao về trình độ tay nghề và kinh nghiệm của người thi công mái hiên sắt mỹ thuật.</li>
+      </ul>
+      <div class="text-bold">6. Một số lưu ý khi chọn lựa mái hiên sắt nghệ thuật cho công trình nhà ở</div>
+      <ul>
+        <li>Độ bền và tuổi thọ của mái hiên, mái vòm hay mái kính mỹ thuật phụ thuộc rất nhiều vào chất liệu của phần khung đỡ. Sắt mỹ thuật với khả năng chống chịu tác động của nắng gió và mọi điều kiện thời tiết khắc nghiệt, là lựa chọn hoàn hảo cho mái che.</li>
+        <li>Ngoài chất liệu, việc chọn mẫu mã thiết kế mái hiên cũng vô cùng quan trọng. Bạn cần phải chọn mẫu mã phù hợp với phong cách thiết kế tổng thể của công trình, nhà ở của mình.</li>
+        <li>Bên cạnh đó, trước khi quyết định mua mái vòm sắt mỹ thuật, hãy đo đạc không gian cẩn thận để tránh lựa chọn nhầm sản phẩm quá nhỏ hoặc quá lớn so với công trình.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-span-2"></div>
+</div>

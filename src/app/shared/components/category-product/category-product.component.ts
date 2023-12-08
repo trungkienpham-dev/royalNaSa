@@ -17,7 +17,15 @@ export class CategoryProductComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  selectChild(child: any){
-    this.router.navigate([`category/${child.path}`])
+  selectChild(parent: any,child: any){
+    if(parent.path === '/sat-my-thuat'){
+      this.router.navigate([`category/sat-my-thuat/${child.path}`])
+    }
+    if(parent.path === '/nhom-kinh'){
+      this.router.navigate([`category/nhom-kinh/${child.path}`])
+    }
+  }
+  selectItem(item: any) {
+    this.router.navigate([`category/${item.path}`])
   }
 }

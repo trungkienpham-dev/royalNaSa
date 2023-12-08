@@ -39,7 +39,7 @@ export const MENUITEMS: MenuItem[] = [
           },
           {
             name: 'lan can',
-            path: 'balcony',
+            path: 'handrail',
             children: []
           },
           {
@@ -55,17 +55,22 @@ export const MENUITEMS: MenuItem[] = [
         children: [
           {
             name: 'thuỷ lực',
-            path: '',
+            path: 'hydraulic',
             children: []
           },
           {
             name: 'xếp trượt',
-            path: '',
+            path: 'sliding',
             children: []
           },
           {
             name: 'trượt quay',
-            path: '',
+            path: 'rotating',
+            children: []
+          },
+          {
+            name: 'mở quay, mở lùa',
+            path: 'swing',
             children: []
           }
         ]
@@ -75,7 +80,30 @@ export const MENUITEMS: MenuItem[] = [
   {
     id: '4',
     name: 'Liên hệ',
-    path: '',
+    path: 'contact',
     children: []
   }
 ]
+
+/**
+ * {id: 1, label: 'p', parent: number|null, children: [ 2,3,4 ]}
+ *  {id: 3, label: 'i1', parent: 1, children: null}
+ *  {id: 2, label: 'i2', parent: 1, children: null}
+ *  {id: 4, label: 'i3', parent: 1, children: []}
+ *
+ *
+ *
+ * /data/4 -> []
+ *
+ *
+ *
+ * /v1/api/<entitiy>
+ * > GET | DELETE | UPDATE | CREATE
+ *
+ *
+ * /v1/api/article/:id
+ * CREATE: { id: 1, content: any }
+ * GET: { id, content:any, created_at, updated_at }
+ * UPDATE: { id, content:<any> }
+ * DELETE: { id, content:<any> }
+ * */

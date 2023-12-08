@@ -1,0 +1,74 @@
+<div class="grid grid-cols-12">
+  <div class="col-span-2"></div>
+  <div class="col-span-8">
+    <div class="grid grid-cols-12 my-10">
+      <div class="col-span-6">
+        <div class="image">
+          <img style="border: 15px #fff solid;" src="https://i.pinimg.com/474x/97/09/42/9709427639d43eea9d4d39de9f5a4d66.jpg" alt="">
+        </div>
+        <div class="slide my-3">
+          <carousel
+            [images]="images"
+            [cellsToShow]="3"
+            [loop]="true"
+            [autoplay]="true"
+            [autoplayInterval]="3000"
+            >
+          </carousel>
+        </div>
+      </div>
+      <div class="col-span-4">
+        <div class="name mx-3 text-3xl">Cửa nhôm xếp trượt</div>
+        <div class="underline mx-3 my-3" style="border-top:3px solid #F08E33; width: 25%;margin-bottom: 30px;"></div>
+        <div class="mx-3 text-l font-light">
+          Cửa nhôm xếp trượt hay còn gọi với nhiều cái tên khác là cửa xếp trượt nhôm kính, cửa xếp trượt gấp cánh, cửa đi xếp trượt, cửa nhôm lùa xếp. Sản phẩm được làm bằng thanh nhôm định hình cao cấp kết hợp với các loại kính như: Kính cường lực, trơn, hoa văn,… và các phụ kiện gioăng, bản lề, bánh xe, đường ray, tay nắm cửa để cấu tạo nên bộ cửa hoàn chỉnh.
+        </div>
+      </div>
+      <div class="col-span-2">
+        <div class="categoryProduct">
+          <h3 class="uppercase text-l">Danh mục sản phẩm</h3>
+          <ul nz-menu nzMode="inline" style="list-style-type: none; margin: 0;">
+            <li class="uppercase" nzOpen="true" *ngFor="let item of productLst" nz-submenu [nzTitle]="item.name" nzIcon="appstore">
+              <ul class="ulchild" *ngIf="item.children">
+                <li class="child uppercase" [nzSelected]="child.path === 'sliding' ? true : false " (click)="selectChild(item, child)" *ngFor="let child of item.children" nz-menu-item>{{child.name}}</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="desc">
+      <div class="title uppercase text-xl font-bold">mô tả</div>
+      <div class="underline" style="border-top:3px solid #F08E33; width: 2%;margin-bottom: 10px;"></div>
+      <div class="text-bold">1. Cửa nhôm xếp trượt là gì?</div>
+      <ul>
+        <li>Cửa nhôm xếp trượt hay còn gọi với nhiều cái tên khác là cửa xếp trượt nhôm kính, cửa xếp trượt gấp cánh, cửa đi xếp trượt, cửa nhôm lùa xếp.</li>
+        <li>Sản phẩm được làm bằng thanh nhôm định hình cao cấp kết hợp với các loại kính như: Kính cường lực, trơn, hoa văn,… và các phụ kiện gioăng, bản lề, bánh xe, đường ray, tay nắm cửa để cấu tạo nên bộ cửa hoàn chỉnh.</li>
+      </ul>
+      <div class="text-bold">2. Cơ chế hoạt động của cửa nhôm kính xếp trượt</div>
+      <ul>
+        <li>Cơ chế hoạt động của cửa nhôm xếp trượt được thiết lập bởi các cánh cửa liên kết với nhau thông qua trục bản lề và bánh xe lăn ở phía trên và dưới hệ thống đường ray.</li>
+        <li>Nguyên lý hoạt động của cửa trượt hỗ trợ bánh xe di chuyển một cách nhịp nhàng và trơn tru trong đường ray và không bị lệch ra ngoài. Vì vậy, cửa xếp trượt được đánh giá cao bởi chuyển động nhẹ nhàng không gây ra tiếng động trong quá trình sử dụng. </li>
+      </ul>
+      <div class="text-bold">3. Các loại cửa nhôm hệ xếp trượt phổ biến </div>
+      <ul>
+        <li>Cửa nhôm kính xếp trượt 4 cánh</li>
+        <li>Cửa nhôm mở xếp trượt 5 cánh</li>
+        <li>Cửa nhôm xếp trượt 6 cánh </li>
+        <li>Cửa nhôm xếp trượt 8 cánh </li>
+        <li>Cửa sổ xếp trượt từ 3-5 cánh</li>
+      </ul>
+      <div class="text-bold">4. Ưu điểm cửa nhôm mở xếp trượt </div>
+      <ul>
+        <li>Có thể mở được 100% diện tích cửa: Cấu tạo đường ray rượt và bản lề phía trên, dưới hỗ trợ gia chủ có thể mở được hết diện tích ô cửa mà không ảnh hưởng đến không gian sử dụng</li>
+        <li>Cửa cố định bằng hệ thống bản lề chắc chắn: Với nguyên hoạt động của bản lề và đường ray cùng bánh trượt được hoạt động một cách trơn tru không hay bị dập cửa khi gió mạnh như các hệ cửa mở quay.</li>
+        <li>Lắp đặt từ 3 - 16 cánh: Cửa nhôm xếp trượt có thể mở 1 cánh, mở 2 cánh và mở rộng cả 4 cánh cho phép làm gia chủ làm cửa với nhiều kích thước lớn tùy theo nhu cầu sử dụng thực tế của công trình. </li>
+        <li>Chịu được áp lực gió mạnh: Cửa và vách được cấu tạo bởi hợp kim nhôm cấu trúc hình hộp chữ nhật. Ngoài ra, sản phẩm được chia thành nhiều khoảng trống kết hợp hệ gioăng kép EPDM có chất lượng kín khít giúp cửa xếp trượt có khả năng chịu lực gió lên đến 1600 Pascal.  </li>
+        <li>Đa dạng mẫu mã, đa dạng kích thước: Cửa đi xếp trượt phù hợp mọi công trình mang tính thẩm mỹ bởi đa dạng mẫu mã và kích thước lên đến 16 cánh giúp không gian mở cửa được rộng hơn.</li>
+        <li>Tích hợp chế độ quay – lật cực hiện đại: Cửa nhôm kính xếp trượt có thể lắp đặt nhiều chế độ khác nhau bởi khả năng ép góc cũng như thanh profile được áp dụng công nghệ hiện đại khiến cho sản phẩm có thể đáp ứng mọi yêu cầu của công trình.</li>
+        <li>Vận hành đóng mở cửa êm ái, nhẹ nhàng, linh hoạt: Cửa nhôm xếp trượt áp dụng công nghệ ép góc tự động hoá bằng công nghệ hiện đại kết hợp ke chống vênh giúp cho cửa có độ kín tuyệt đối. Ngoài ra, các bánh lăn được định hình trong đường ray trên và dưới khiến cho sản phẩm vận hành trơn tru và êm ái.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-span-2"></div>
+</div>

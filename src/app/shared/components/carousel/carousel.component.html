@@ -1,0 +1,19 @@
+<carousel
+      [images]="data"
+      [cellsToShow]="4"
+      [autoplay]="true"
+      [autoplayInterval]="500"
+      [height]="400"
+>
+        <div class="carousel-cell mt-10" *ngFor="let item of data">
+          <nz-card nzHoverable style="width:300px; height: 450px;" [nzCover]="coverTemplate">
+            <nz-card-meta [nzTitle]="item.title"></nz-card-meta>
+          </nz-card>
+          <ng-template #coverTemplate>
+            <div style="max-width: 300px; max-height: 200px; overflow: hidden;">
+              <img style="width: 100%; height: auto;" alt="example" [src]="item.image" />
+            </div>
+          </ng-template>
+        </div>
+</carousel>
+

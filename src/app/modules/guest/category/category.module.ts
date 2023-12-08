@@ -1,21 +1,10 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { SharedModule } from 'src/app/shared/shared.module';
-import { GateLstComponent } from './gate/pages/gate-lst/gate-lst.component';
 import { CategoryRoutes } from './category.routing';
-import { GateService } from './gate/services/gate.service';
-import { GateDetailComponent } from './gate/pages/gate-detail/gate-detail.component';
+import { ArtIronService } from './art-iron/services/artIron.service';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    CategoryRoutes,
-    SharedModule
-  ],
-  declarations: [
-    GateLstComponent,
-    GateDetailComponent
-  ],
-  providers: [GateService]
+  imports: [CategoryRoutes],
+  declarations: [],
+  providers: [ArtIronService]
 })
 export class CategoryModule { }
