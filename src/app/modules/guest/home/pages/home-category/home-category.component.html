@@ -1,17 +1,17 @@
 <div class="grid grid-cols-12">
   <div class="col-span-2"></div>
   <div class="col-span-8">
-    <div class="outstanding-product my-16">
-      <div class="text-2xl text-center uppercase font-bold mb-3">Danh mục sản phẩm</div>
-      <div class="underline" style="border-top:3px solid #F08E33; width: 10%; margin-left: 45%;"></div>
+    <div class="outstanding-product">
+      <div class="text-2xl text-start uppercase font-bold mb-3">Danh mục sản phẩm</div>
+      <div class="underline" style="border-top:3px solid #F08E33; width: 10%"></div>
       <div class="my-5">
         <div class="text-l uppercase font-bold">sắt mỹ thuật</div>
         <div class="underline" style="border-top:3px solid #F08E33; width: 5%;"></div>
         <!-- <app-carousel [data]="lstSMT"></app-carousel> -->
         <div class="grid grid-cols-12">
-          <div class="col-span-3 m-3 grid grid-rows-3 cursor-pointer" (click)="onDetail(item)" style="height: 300px;" *ngFor="let item of lstSMT">
+          <div class="col-span-3 m-3 grid grid-rows-3 cursor-pointer" (click)="onDetailSMT(item)" style="height: 300px;" *ngFor="let item of lstSMT">
             <div class="row-span-2">
-              <img style="width: 100%; height: 100%; overflow: hidden;" [src]="item.image" alt="">
+              <img style="width: 100%; height: 100%; overflow: hidden;" [src]="item.img" alt="">
             </div>
             <div class="row-span-1 bg-slate-200 flex flex-col justify-center text-center uppercase text-xl text-bold">
               {{item.title}}
@@ -25,9 +25,9 @@
         <div class="underline" style="border-top:3px solid #F08E33; width: 5%;"></div>
         <!-- <app-carousel [data]="lstNK"></app-carousel> -->
         <div class="grid grid-cols-12">
-          <div class="col-span-3 m-3 grid grid-rows-3 cursor-pointer" (click)="onDetail(item)" style="height: 300px;" *ngFor="let item of lstNK">
+          <div class="col-span-3 m-3 grid grid-rows-3 cursor-pointer" (click)="onDetailNK(item)" style="height: 300px;" *ngFor="let item of lstNK">
             <div class="row-span-2">
-              <img style="width: 100%; height: 100%; overflow: hidden;" [src]="item.image" alt="">
+              <img style="width: 100%; height: 100%; overflow: hidden;" [src]="item.img" alt="">
             </div>
             <div class="row-span-1 bg-slate-200 flex flex-col justify-center text-center uppercase text-xl text-bold">
               {{item.title}}

@@ -3,6 +3,12 @@ export interface product {
   title: string;
   desc: string;
   image: string;
-  imageLst: [];
-  path: string
+  imageLst: string[];
+  path: string;
+  content: string
+}
+
+export interface introProd {
+  tit: string;
+  content: string[]
 }

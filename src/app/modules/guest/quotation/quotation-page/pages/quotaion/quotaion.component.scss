@@ -1,0 +1,20 @@
+//banner
+.banner {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://scontent.fhan2-4.fna.fbcdn.net/v/t39.30808-6/302421266_185768917239959_2161548576482077399_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=3635dc&_nc_ohc=GOZPyGUV_tEAX_preYv&_nc_ht=scontent.fhan2-4.fna&oh=00_AfDXcEh8QIKNjblCRb_RFzi9IMOo_SPDj-Zf4_8XSNA0hg&oe=6585C0AE');
+  height: 50vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.text-intro {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 18px;
+  font-weight: 100;
+}

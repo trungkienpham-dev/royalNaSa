@@ -12,9 +12,9 @@ export class ProductListComponent implements OnInit {
   constructor(
     private router: Router,
     private allProductService: AllProductService
-  ){}
-  lstSMT: product[] = [] //list sắt mỹ thuật
-  lstNK: product[] = [] //List nhôm kính
+  ) { }
+  lstSMT: any[] = [] //list sắt mỹ thuật
+  lstNK: any[] = [] //List nhôm kính
 
   ngOnInit(): void {
     this.getListSMT()
@@ -22,21 +22,26 @@ export class ProductListComponent implements OnInit {
   }
   getListSMT() {  //Lấy danh sách sản phẩm sắt mỹ thuật
     this.allProductService
-      .getSMTProduct()
+      .findLst('SAT_MY_THUAT')
       .pipe()
       .subscribe((item: any) => {
-        this.lstSMT = item
+        let data = JSON.parse(item?.[0]?.data)
+        this.lstSMT = data
       })
   }
   getListNK() {  //Lấy danh sách sản phẩm nhôm kính
     this.allProductService
-      .getNKProduct()
+      .findLst('NHOM_KINH')
       .pipe()
       .subscribe((item: any) => {
-        this.lstNK = item
+        let data = JSON.parse(item?.[0]?.data)
+        this.lstNK = data
       })
   }
-  onDetail(item: any){
-    this.router.navigate([`category/${item.path}`])
+  onDetailSMT(item: any) {
+    this.router.navigate([`category/sat-my-thuat/${item.name}`])
+  }
+  onDetailNK(item: any) {
+    this.router.navigate([`category/nhom-kinh/${item.name}`])
   }
 }

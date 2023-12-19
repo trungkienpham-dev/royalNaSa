@@ -1,0 +1,17 @@
+<div class="banner">
+  <div class="text-intro">
+    <h1 class="text-white uppercase text-3xl font-bold">Những câu hỏi thường gặp</h1>
+    <h1 class="text-white uppercase font-light">RoyalNaSa sẽ giải đáp nhanh 1 số câu hỏi thường gặp, giúp quý khách tiết kiệm thời gian tìm hiểu, đồng thời đưa ra lựa chọn chính xác hơn.</h1>
+  </div>
+</div>
+
+<div class="grid grid-cols-12">
+  <div class="col-span-2"></div>
+  <div class="col-span-8 my-10">
+    <nz-collapse nzAccordion>
+      <nz-collapse-panel *ngFor="let panel of lstQA" [nzHeader]="panel.Q" >
+        <p>{{ panel.A }}</p>
+      </nz-collapse-panel>
+    </nz-collapse>
+  <div class="col-span-2"></div>
+</div>

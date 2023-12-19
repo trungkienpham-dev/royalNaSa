@@ -10,20 +10,23 @@ import { AlGlassService } from '../../servies/all-glass.service';
 export class AlGlassLstComponent implements OnInit {
   constructor(
     private router: Router,
-    private allGlassService: AlGlassService
-  ){}
+    private alGlassService: AlGlassService
+  ) { }
   lstNK: any[] = [];
 
   ngOnInit(): void {
     this.getList()
   }
   getList() {
-    this.allGlassService
-      .getLstNK()
+    this.alGlassService
+      .findLstNK('NHOM_KINH')
       .pipe()
       .subscribe((item: any) => {
-        this.lstNK = item
+        let data = JSON.parse(item?.[0]?.data)
+        this.lstNK = data
       })
   }
-  onDetail(item: string){}
+  onDetail(item: string) {
+    this.router.navigate([`category/nhom-kinh/${item}`])
+  }
 }

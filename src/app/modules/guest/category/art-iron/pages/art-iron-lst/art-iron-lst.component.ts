@@ -11,7 +11,7 @@ export class ArtIronLstComponent implements OnInit {
   constructor(
     private router: Router,
     private artIronService: ArtIronService
-  ){}
+  ) { }
   lstSMT: any[] = [];
 
   ngOnInit(): void {
@@ -19,13 +19,14 @@ export class ArtIronLstComponent implements OnInit {
   }
   getList() {
     this.artIronService
-      .getLstSMT()
+      .findLstSMT('SAT_MY_THUAT')
       .pipe()
       .subscribe((item: any) => {
-        this.lstSMT = item
+        let data = JSON.parse(item?.[0]?.data)
+        this.lstSMT = data
       })
   }
-  onDetail(item: string){
+  onDetail(item: string) {
     this.router.navigate([`category/sat-my-thuat/${item}`])
   }
 }

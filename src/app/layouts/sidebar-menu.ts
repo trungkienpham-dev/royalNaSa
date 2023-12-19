@@ -29,22 +29,22 @@ export const MENUITEMS: MenuItem[] = [
         children: [
           {
             name: 'cổng',
-            path: 'gate',
+            path: 'Gate',
             children: []
           },
           {
             name: 'mái',
-            path: 'roof',
+            path: 'Roof',
             children: []
           },
           {
             name: 'lan can',
-            path: 'handrail',
+            path: 'Handrail',
             children: []
           },
           {
             name: 'cầu thang',
-            path: 'stair',
+            path: 'Stair',
             children: []
           }
         ]
@@ -55,22 +55,32 @@ export const MENUITEMS: MenuItem[] = [
         children: [
           {
             name: 'thuỷ lực',
-            path: 'hydraulic',
+            path: 'Hydraulic',
             children: []
           },
           {
             name: 'xếp trượt',
-            path: 'sliding',
+            path: 'Sliding',
             children: []
           },
           {
             name: 'trượt quay',
-            path: 'rotating',
+            path: 'Rotating',
             children: []
           },
           {
             name: 'mở quay, mở lùa',
-            path: 'swing',
+            path: 'Swing',
+            children: []
+          },
+          {
+            name: 'cửa nhôm xingfa',
+            path: 'Xingfa',
+            children: []
+          },
+          {
+            name: 'cửa nhôm vát cạnh 55',
+            path: '...',
             children: []
           }
         ]
@@ -79,31 +89,20 @@ export const MENUITEMS: MenuItem[] = [
   },
   {
     id: '4',
+    name: 'Báo giá',
+    path: 'quotation',
+    children: []
+  },
+  {
+    id: '5',
+    name: 'Q&A',
+    path: 'q&a',
+    children: []
+  },
+  {
+    id: '6',
     name: 'Liên hệ',
     path: 'contact',
     children: []
   }
 ]
-
-/**
- * {id: 1, label: 'p', parent: number|null, children: [ 2,3,4 ]}
- *  {id: 3, label: 'i1', parent: 1, children: null}
- *  {id: 2, label: 'i2', parent: 1, children: null}
- *  {id: 4, label: 'i3', parent: 1, children: []}
- *
- *
- *
- * /data/4 -> []
- *
- *
- *
- * /v1/api/<entitiy>
- * > GET | DELETE | UPDATE | CREATE
- *
- *
- * /v1/api/article/:id
- * CREATE: { id: 1, content: any }
- * GET: { id, content:any, created_at, updated_at }
- * UPDATE: { id, content:<any> }
- * DELETE: { id, content:<any> }
- * */

@@ -1,0 +1,51 @@
+<div class="create-btn">
+  <h2 class="uppercase my-10 text-xl">Danh mục câu hỏi thường gặp</h2>
+</div>
+<div class="w-full flex justify-end">
+  <button class="my-3" nz-button nzType="primary" (click)="onShowModal()">Thêm</button>
+</div>
+<div>
+  <nz-table #basicTable [nzData]="lstQA" [nzShowPagination]="false" >
+    <thead>
+      <tr>
+        <th>Câu hỏi</th>
+        <th>Câu trả lời</th>
+        <th>Hành động</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of lstQA">
+        <td><input class="w-full border-2 boder-solid" type="text" value="{{item.Q}}" ></td>
+        <td><input class="w-full border-2 boder-solid" type="text" value="{{item.A}}"></td>
+        <td>
+          <button class="mx-3" nz-button nzSize="large" nzType="primary" (click)="onDelete(item)">Xoá</button>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+</div>
+<nz-modal [(nzVisible)]="isVisible" nzTitle="Thêm Q&A" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
+  <ng-container *nzModalContent>
+    <form nz-form [formGroup]="formQA" onsubmit="onSubmit()">
+      <nz-form-item>
+        <nz-form-label>Câu hỏi</nz-form-label>
+        <nz-form-control>
+          <textarea class="w-full boder-solid border-2" formControlName="Q"></textarea>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label>Trả lời</nz-form-label>
+        <nz-form-control>
+          <textarea class="w-full boder-solid border-2" formControlName="A"></textarea>
+        </nz-form-control>
+      </nz-form-item>
+      <div class="alert w-full" [style.display]="isDisplayAlertErr">
+        <nz-alert class="w-full" nzType="error" nzMessage="Vui lòng nhập đầy đủ thông tin" nzShowIcon></nz-alert>
+      </div>
+    </form>
+  </ng-container>
+</nz-modal>
+<div class="alert w-1/2 justify-end fixed top-3 right-3" [style.display]="isDisplayAlertSuccess">
+  <nz-alert class="w-1/2" nzType="success" nzMessage="Cập nhật thành công" nzShowIcon></nz-alert>
+</div>
+

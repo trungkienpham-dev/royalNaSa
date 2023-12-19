@@ -1,26 +1,17 @@
 import { Routes, RouterModule } from '@angular/router';
-import { AdminGateComponent } from './pages/admin-gate/admin-gate.component';
-import { AdminRoofComponent } from './pages/admin-roof/admin-roof.component';
-import { AdminHandrailComponent } from './pages/admin-handrail/admin-handrail.component';
-import { AdminStairComponent } from './pages/admin-stair/admin-stair.component';
+import { SmtLstComponent } from './admin-SMT/pages/smt-lst/smt-lst.component';
 
 const routes: Routes = [
   {
-    path: 'gate',
-    component: AdminGateComponent
+    path: 'sat-my-thuat',
+    loadChildren: () =>
+    import('../admin-category/admin-SMT/adminSMT.module').then((m) => m.AdminSMTModule)
   },
   {
-    path: 'roof',
-    component: AdminRoofComponent
-  },
-  {
-    path: 'handrail',
-    component: AdminHandrailComponent
-  },
-  {
-    path: 'stair',
-    component: AdminStairComponent
-  },
+    path: 'nhom-kinh',
+    loadChildren: () =>
+    import('../admin-category/admin-NK/adminNK.modules').then((m) => m.AdminNKModule)
+  }
 ]
 
 export const AdminCategoryRoutes = RouterModule.forChild(routes);

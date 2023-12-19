@@ -20,25 +20,25 @@ export const MENUADMINITEMS: MenuAdminItem[] = [
             name: 'cổng',
             path: 'gate',
             children: [],
-            icon:''
+            icon: ''
           },
           {
             name: 'mái',
             path: 'roof',
             children: [],
-            icon:''
+            icon: ''
           },
           {
             name: 'lan can',
             path: 'handrail',
             children: [],
-            icon:''
+            icon: ''
           },
           {
             name: 'cầu thang',
             path: 'stair',
             children: [],
-            icon:''
+            icon: ''
           }
         ],
         icon: ''
@@ -72,9 +72,21 @@ export const MENUADMINITEMS: MenuAdminItem[] = [
             icon: ''
           }
         ],
-        icon:''
+        icon: ''
       }
     ],
     icon: 'unordered-list'
   },
+  {
+    name: 'Thông tin đăng ký báo giá',
+    path: 'admin/quotation',
+    children: [],
+    icon: 'unordered-list'
+  },
+  {
+    name: 'Câu hỏi thường gặp',
+    path: 'admin/Q&A',
+    children: [],
+    icon: ''
+  }
 ]

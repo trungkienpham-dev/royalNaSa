@@ -14,7 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CategoryPageLayoutComponent } from './layouts/category-page-layout/category-page-layout.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
-
+// import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 registerLocaleData(en);
 
 @NgModule({
@@ -31,6 +31,7 @@ registerLocaleData(en);
     HttpClientModule,
     BrowserAnimationsModule,
     SharedModule,
+    // CKEditorModule
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US }

@@ -10,14 +10,18 @@ import { MENUADMINITEMS } from '../sidebar-admin-page';
 export class AdminLayoutComponent implements OnInit {
   constructor(
     private router: Router
-  ){}
+  ) { }
   menuItems = MENUADMINITEMS;
 
   ngOnInit(): void {
 
   }
 
-  onClick(item: any){
+  onClick(item: any) {
     this.router.navigate([`admin/category/${item.path}`]);
+  }
+  onClickItem(item: any) {
+    this.router.navigate([`${item.path}`]);
+
   }
 }

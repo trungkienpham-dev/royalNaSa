@@ -1,16 +1,31 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/internal/Observable';
-import { of } from 'rxjs/internal/observable/of';
-import { nhomkinh } from 'src/assets/data-fake/card-combo';
-import { product } from 'src/app/core/models/product.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AlGlassService {
 
-  getLstNK(): Observable<product[]> {
-    return of(nhomkinh)
+  private apiUrl = 'http://localhost:8080/entities'
+
+  findCategory() {
+    return this.http.get(`${this.apiUrl}?name=CATEGORY`)
   }
-  constructor() { }
+
+  findLstNK(name: string) {
+    return this.http.get(`${this.apiUrl}?name=${name}`)
+  }
+
+  findCrrNK(name: string) {
+    return this.http.get(`${this.apiUrl}?name=${name}`)
+  }
+
+  updateCrrNK(id: number, body: any) {
+    return this.http.put<any>(`${this.apiUrl}/${id}`, body)
+      .subscribe((data) => { })
+  }
+
+  constructor(
+    protected http: HttpClient,
+  ) { }
 }

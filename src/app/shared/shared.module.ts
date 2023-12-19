@@ -7,6 +7,7 @@ import * as AllIcons from '@ant-design/icons-angular/icons';
 import { NZ_I18N, en_US } from 'ng-zorro-antd/i18n';
 import { ComponentsModule } from "./components/components.module";
 import { NgImageSliderModule } from 'ng-image-slider';
+import { ReactiveFormsModule } from "@angular/forms";
 
 
 const antDesignIcons = AllIcons as {
@@ -17,7 +18,8 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
   exports: [
     ZorroAntdModule,
     ComponentsModule,
-    NgImageSliderModule
+    NgImageSliderModule,
+    ReactiveFormsModule
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US },

@@ -1,0 +1,68 @@
+<div class="grid grid-cols-12">
+  <div class="col-span-2"></div>
+  <div class="col-span-8">
+    <div class="grid grid-cols-12 my-10">
+      <div class="col-span-6">
+        <div class="image">
+          <img style="border: 15px #ddab7c solid; width: 100%; max-height: 500px; min-height: 500px; object-fit: cover;" [src]="image" alt="Ảnh không tồn tại" />
+        </div>
+        <div class="slide my-3">
+          <carousel
+            [images]="images"
+            [cellsToShow]="3"
+            [loop]="true"
+            [autoplay]="false"
+            [autoplayInterval]="3000"
+            [counter]="true"
+            [dots]="true"
+            (click)="handleItemClick($event)"
+          >
+          </carousel>
+        </div>
+      </div>
+      <div class="col-span-4">
+        <div class="name mx-3 text-3xl">{{this.data.title}}</div>
+        <div
+          class="underline mx-3 my-3"
+          style="border-top: 3px solid #f08e33; width: 25%; margin-bottom: 30px"
+        ></div>
+        <div class="mx-3 text-l font-light">
+          {{this.data.desc}}
+        </div>
+      </div>
+      <div class="col-span-2">
+        <div class="categoryProduct">
+          <h3 class="uppercase text-l" style="color: black;">Danh mục sản phẩm</h3>
+          <ul nz-menu nzMode="inline" style="list-style-type: none; margin: 0">
+            <li
+              class="uppercase"
+              nzOpen="true"
+              *ngFor="let item of menuItems"
+              nz-submenu
+              [nzTitle]="item.name"
+              nzIcon="appstore"
+            >
+              <ul class="ulchild" *ngIf="item.child">
+                <li
+                  *ngFor="let child of item.child"
+                  class="child uppercase"
+                  [nzSelected]="child.path === 'Gate' ? true : false"
+                  (click)="selectChild(item, child)"
+                  nz-menu-item
+                  style="padding-left: 20px!important; font-size: 12px;"
+                >
+                  {{ child.name }}
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="title uppercase text-xl font-bold">mô tả</div>
+      <div class="underline" style="border-top:3px solid #F08E33; width: 2%;margin-bottom: 10px;"></div>
+    <div class="desc" [innerHTML]="desc"></div>
+
+  </div>
+  <div class="col-span-2"></div>
+</div>

@@ -8,5 +8,6 @@ import { DefaultPageComponent } from './admin-home/pages/default-page/default-pa
   declarations: [
     DefaultPageComponent
   ],
+
 })
-export class AdminModule {}
+export class AdminModule { }

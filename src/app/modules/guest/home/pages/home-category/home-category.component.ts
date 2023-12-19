@@ -13,10 +13,10 @@ export class CategoryComponent implements OnInit {
   constructor(
     private router: Router,
     private homeService: HomeService
-  ){}
+  ) { }
 
-  lstSMT: product[] = [] //list sắt mỹ thuật
-  lstNK: product[] = [] //List nhôm kính
+  lstSMT: any[] = [] //list sắt mỹ thuật
+  lstNK: any[] = [] //List nhôm kính
 
   ngOnInit(): void {
     this.getListSMT()
@@ -24,27 +24,31 @@ export class CategoryComponent implements OnInit {
   }
   getListSMT() {  //Lấy danh sách sản phẩm sắt mỹ thuật
     this.homeService
-      .getSMTProduct()
+      .findLstSMT('SAT_MY_THUAT')
       .pipe()
       .subscribe((item: any) => {
-        this.lstSMT = item
+        this.lstSMT = JSON.parse(item[0].data)
       })
   }
   getListNK() {  //Lấy danh sách sản phẩm nhôm kính
     this.homeService
-      .getNKProduct()
+      .findLstSMT('NHOM_KINH')
       .pipe()
       .subscribe((item: any) => {
-        this.lstNK = item
+        this.lstNK = JSON.parse(item[0].data)
       })
   }
-  onDetail(item: any){
-    this.router.navigate([`category/${item.path}`])
+  onDetailSMT(item: any) {
+    this.router.navigate([`category/sat-my-thuat/${item.name}`])
+  }
+  onDetailNK(item: any) {
+    this.router.navigate([`category/nhom-kinh/${item.name}`])
   }
   images = [
-    {path: 'https://source.unsplash.com/800x600/?nature'},
-    {path: 'https://source.unsplash.com/800x600/?car'},
-    {path: 'https://source.unsplash.com/800x600/?moto'},
-    {path: 'https://source.unsplash.com/800x600/?fantasy'},
+    { path: 'https://source.unsplash.com/800x600/?nature' },
+    { path: 'https://source.unsplash.com/800x600/?car' },
+    { path: 'https://source.unsplash.com/800x600/?moto' },
+    { path: 'https://source.unsplash.com/800x600/?fantasy' },
   ]
 }
+

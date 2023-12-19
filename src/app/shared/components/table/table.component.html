@@ -1,22 +1,24 @@
 <div class="h-full flex flex-col justify-between">
-  <nz-table #basicTable [nzData]="data">
+  <nz-table #basicTable [nzData]="data" [nzShowPagination]="false">
     <thead>
       <tr>
-        <th *ngIf="showIndex" nzAlign="center" nzWidth="60px" class="font-12">
+        <!-- <th *ngIf="showIndex" nzAlign="center" nzWidth="60px" class="font-12">
           STT
-        </th>
+        </th> -->
         <th *ngFor="let column of displayedColumns">{{column.header}}</th>
         <th>Hành động</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let item of data">
-        <td *ngIf="showIndex"></td>
+        <!-- <td *ngIf="showIndex"></td> -->
         <td *ngFor="let key of keyColumn">{{item[key]}}</td>
         <td>
-          <button nz-button nzSize="large" nzType="primary" (click)="onEdit(item)">Xem chi tiết</button>
+          <button nz-button nzSize="large" nzType="primary" (click)="onDetail(item, path)">Xem chi tiết</button>
         </td>
       </tr>
     </tbody>
   </nz-table>
 </div>
+
+

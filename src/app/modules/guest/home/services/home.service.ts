@@ -1,19 +1,22 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { product } from 'src/app/core/models/product.model';
-import { nhomkinh, satMyThuat } from 'src/assets/data-fake/card-combo';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HomeService {
 
-  getSMTProduct(): Observable<product[]> { //danh sách sản phẩm sắt mỹ thuật
-    return of(satMyThuat)
+  private apiUrl = 'http://localhost:8080/entities'
+
+  findLstSMT(name: string) {
+    return this.http.get(`${this.apiUrl}?name=${name}`)
   }
-  getNKProduct(): Observable<product[]> { //danh sách sản phẩm nhôm kính
-    return of(nhomkinh)
+
+  findCrrSmt(name: string) {
+    return this.http.get(`${this.apiUrl}?name=${name}`)
   }
-  constructor() { }
+  constructor(
+    protected http: HttpClient
+  ) { }
 
 }

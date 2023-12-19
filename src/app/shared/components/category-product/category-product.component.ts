@@ -10,18 +10,18 @@ import { MENUITEMS } from 'src/app/layouts/sidebar-menu';
 export class CategoryProductComponent implements OnInit {
   constructor(
     private router: Router
-  ) {}
+  ) { }
   menuItems = MENUITEMS;
   category = this.menuItems.find(obj => obj.id === '3');
   productLst = this.category?.children;
 
   ngOnInit(): void {
   }
-  selectChild(parent: any,child: any){
-    if(parent.path === '/sat-my-thuat'){
+  selectChild(parent: any, child: any) {
+    if (parent.path === '/sat-my-thuat') {
       this.router.navigate([`category/sat-my-thuat/${child.path}`])
     }
-    if(parent.path === '/nhom-kinh'){
+    if (parent.path === '/nhom-kinh') {
       this.router.navigate([`category/nhom-kinh/${child.path}`])
     }
   }

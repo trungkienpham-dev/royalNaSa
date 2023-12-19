@@ -18,6 +18,16 @@ const routes: Routes = [
       import('./introduce/introduce.module').then((m) => m.IntroduceModule)
   },
   {
+    path: 'quotation',
+    loadChildren: () =>
+      import('./quotation/quotation.module').then((m) => m.QuotationModule)
+  },
+  {
+    path: 'q&a',
+    loadChildren: () =>
+      import('./qa/qa.module').then((m) => m.QAModule)
+  },
+  {
     path: 'contact',
     loadChildren: () =>
       import('./contact/contact.module').then((m) => m.ContactModule)

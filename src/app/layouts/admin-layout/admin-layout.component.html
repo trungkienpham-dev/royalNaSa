@@ -1,18 +1,21 @@
 <nz-layout style="height: 100vh;">
   <nz-sider nzCollapsible nzWidth="300px" style="background-color: #FFF;">
     <div class="logo my-10">
-      <img src="../../../assets/images/logo.png" alt="">
+      <img src="../../../assets/images/logo.jpg" alt="">
     </div>
     <ul nz-menu nzTheme="light" nzMode="inline">
-      <li nz-submenu nzOpen [nzIcon]="item.icon" [nzTitle]="item.name" *ngFor="let item of menuItems">
-        <ul nz-menu nzTheme="light" nzMode="inline" *ngIf="item.children.length > 0">
-          <li class="uppercase" nz-submenu nzOpen [nzIcon]="subitem.icon" [nzTitle]="subitem.name" *ngFor="let subitem of item.children">
-            <ul *ngIf="subitem.children.length > 0">
-              <li (click)="onClick(itemChild)" nz-menu-item *ngFor="let itemChild of subitem.children">{{itemChild.name}}</li>
-            </ul>
-          </li>
-        </ul>
-      </li>
+      <div *ngFor="let item of menuItems">
+        <li *ngIf="item.children.length == 0" nz-menu-item (click)="onClickItem(item)">
+          {{item.name}}
+        </li>
+        <li *ngIf="item.children.length > 0" nz-menu-group>
+          <ul nz-submenu [nzTitle]="item.name" nzTheme="light" nzMode="inline" *ngIf="item.children.length > 0">
+            <li class="uppercase" (click)="onClick(subitem)" nz-menu-item nzOpen *ngFor="let subitem of item.children">
+              {{subitem.name}}
+            </li>
+          </ul>
+        </li>
+      </div>
     </ul>
   </nz-sider>
   <nz-layout style="padding: 1%;">

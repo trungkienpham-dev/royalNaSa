@@ -5,6 +5,6 @@ import { ArtIronService } from './art-iron/services/artIron.service';
 @NgModule({
   imports: [CategoryRoutes],
   declarations: [],
-  providers: [ArtIronService]
+  providers: []
 })
 export class CategoryModule { }
