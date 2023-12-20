@@ -10,7 +10,7 @@
         </li>
         <li *ngIf="item.children.length > 0" nz-menu-group>
           <ul nz-submenu [nzTitle]="item.name" nzTheme="light" nzMode="inline" *ngIf="item.children.length > 0">
-            <li class="uppercase" (click)="onClick(subitem)" nz-menu-item nzOpen *ngFor="let subitem of item.children">
+            <li class="uppercase" (click)="onClick(subitem)" nz-menu-item *ngFor="let subitem of item.children">
               {{subitem.name}}
             </li>
           </ul>

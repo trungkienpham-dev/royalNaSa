@@ -4,13 +4,15 @@ import { of } from 'rxjs/internal/observable/of';
 import { satMyThuat } from 'src/assets/data-fake/card-combo';
 import { product } from 'src/app/core/models/product.model';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ArtIronService {
 
-  private apiUrl = 'http://localhost:8080/entities'
+  // private apiUrl = 'http://localhost:8080/entities'
+  private apiUrl = `${environment.apiURL}/entities`
 
   findCategory() {
     return this.http.get(`${this.apiUrl}?name=CATEGORY`)
