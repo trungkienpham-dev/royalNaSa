@@ -95,6 +95,8 @@ export class SmtDetailComponent implements OnInit {
 
     this.adminSMTService
       .updateCrrSmt(this.idCrrSmt, body)
+    this.findCrrSmt()
+    // ---------------------
     this.isDisplayAlert = 'flex'
     setTimeout(() => {
       this.isDisplayAlert = 'none'
@@ -143,7 +145,6 @@ export class SmtDetailComponent implements OnInit {
           imageLst: newImgLst,
         }
         this.updateCrrSmt(val);
-        this.findCrrSmt()
         this.findCrrSmt()
       },
       nzCancelText: 'No',

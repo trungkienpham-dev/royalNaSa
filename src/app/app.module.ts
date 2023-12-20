@@ -22,7 +22,7 @@ registerLocaleData(en);
     AppComponent,
     ContentLayoutComponent,
     CategoryPageLayoutComponent,
-    AdminLayoutComponent
+    AdminLayoutComponent,
   ],
   imports: [
     AppRoutes,

@@ -1,5 +1,4 @@
 import { Routes, RouterModule } from '@angular/router';
-import { CategoryPageLayoutComponent } from 'src/app/layouts/category-page-layout/category-page-layout.component';
 
 const routes: Routes = [
   {

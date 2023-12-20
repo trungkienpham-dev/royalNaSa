@@ -9,18 +9,9 @@ import { product } from 'src/app/core/models/product.model';
 })
 export class IntroPageComponent {
   constructor(
-    private introduceService: IntroduceService
-  ){}
-  outStandingProduct: product[] = [] //list sắt mỹ thuật
+    // private introduceService: IntroduceService
+  ) { }
+  // outStandingProduct: product[] = []
   ngOnInit(): void {
-    this.getOutStandingProduct()
-  }
-  getOutStandingProduct() {  //Lấy danh sách sản phẩm sắt mỹ thuật
-    this.introduceService
-      .getOutStandingProduct()
-      .pipe()
-      .subscribe((item: any) => {
-        this.outStandingProduct = item
-      })
   }
 }

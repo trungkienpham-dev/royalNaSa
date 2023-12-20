@@ -51,6 +51,7 @@ export class AdminQaPagesComponent implements OnInit {
       .createFormQuotation(this.idAPI, body)
     this.findLstQA()
     this.findLstQA()
+    // -----------------------------
     this.isDisplayAlertSuccess = 'flex'
     setTimeout(() => {
       this.isDisplayAlertSuccess = 'none'
@@ -83,5 +84,12 @@ export class AdminQaPagesComponent implements OnInit {
 
   handleCancel(): void {
     this.isVisible = false;
+  }
+
+  subcribeValueChange() {
+    console.log('Form:', this.formQA.value);
+    console.log('Data:', this.lstQA);
+
+
   }
 }

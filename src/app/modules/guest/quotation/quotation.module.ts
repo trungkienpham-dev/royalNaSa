@@ -10,7 +10,7 @@ import { QuotationService } from './quotation-page/services/quotation.service';
     SharedModule
   ],
   declarations: [
-    QuotaionComponent
+    // QuotaionComponent
   ],
   providers: [QuotationService]
 })

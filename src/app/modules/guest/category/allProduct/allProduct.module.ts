@@ -11,7 +11,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
     AllProductRoutes,
   ],
   declarations: [
-    ProductListComponent
+    // ProductListComponent
   ],
   providers: []
 })

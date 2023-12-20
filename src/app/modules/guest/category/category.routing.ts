@@ -9,13 +9,11 @@ const routes: Routes = [
   },
   {
     path: 'sat-my-thuat',
-    // component: CategoryPageLayoutComponent,
     loadChildren: () =>
       import('./art-iron/artIron.module').then((m) => m.ArtIronModule),
   },
   {
     path: 'nhom-kinh',
-    // component: CategoryPageLayoutComponent,
     loadChildren: () =>
       import('./al-glass/al-glass.module').then((m) => m.AlGlassModule),
   },
