@@ -1,0 +1,13 @@
+FROM alpine:3.14
+
+WORKDIR /xxx
+
+COPY ./app /xxx
+COPY ./app.db /xxx
+
+EXPOSE 8080
+
+RUN chmod +xwr /xxx/app
+RUN chmod +xwr /xxx/app.db
+
+CMD [ "/xxx/app" ]

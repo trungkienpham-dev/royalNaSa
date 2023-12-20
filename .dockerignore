@@ -1,0 +1,9 @@
+node_modules
+.dockerignore
+app
+app.db
+dist
+.vscode
+.angular
+.git
+.DS_STORE
