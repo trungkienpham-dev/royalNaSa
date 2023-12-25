@@ -48,7 +48,7 @@ export class AlGlassDetailComponent implements OnInit {
       this.findCrrSmt()
     }
     if (parent.name === 'NHOM_KINH') {
-      this.router.navigate([`category/nhom_kinh/${child.path}`])
+      this.router.navigate([`category/nhom-kinh/${child.path}`])
       this.name = child.path
       this.findCrrSmt()
     }

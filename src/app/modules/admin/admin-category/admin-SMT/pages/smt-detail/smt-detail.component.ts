@@ -96,6 +96,7 @@ export class SmtDetailComponent implements OnInit {
     this.adminSMTService
       .updateCrrSmt(this.idCrrSmt, body)
     this.findCrrSmt()
+    this.findCrrSmt()
     // ---------------------
     this.isDisplayAlert = 'flex'
     setTimeout(() => {

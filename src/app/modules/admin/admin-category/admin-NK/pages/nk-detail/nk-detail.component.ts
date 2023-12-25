@@ -20,7 +20,7 @@ export class NkDetailComponent implements OnInit {
   };
   isDisableDesc: boolean = true;
   isDisableUrlImg: boolean = true;
-
+  isDisableDescDetail: boolean = true;
 
   newImageSrc: string = '';
 

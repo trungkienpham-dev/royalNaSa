@@ -61,8 +61,10 @@
 
   </nz-tab>
   <nz-tab nzTitle="Mô tả chi tiết">
-    <button (click)="onSaveDesc()" class="my-3" nz-button nzType="primary">Lưu</button>
-    <ckeditor [(ngModel)]="model.editorData" [editor]="Editor"></ckeditor>
+    <div class="btn text-end">
+      <button (click)="onSaveDesc()" class="my-3" [disabled]="isDisableDescDetail" nz-button nzType="primary">Lưu</button>
+    </div>
+    <ckeditor [(ngModel)]="model.editorData" [editor]="Editor" (ngModelChange)="isDisableDescDetail = false"></ckeditor>
     <div [innerHTML]="model.editorData"></div>
   </nz-tab>
 </nz-tabset>
